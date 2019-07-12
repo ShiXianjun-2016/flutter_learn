@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'widget/ListView.dart';
+import 'widget/LearnListView.dart';
+import 'widget/LearnGridView.dart';
+import 'layout/LearnLayoutRow.dart';
+import 'layout/LearnLayoutColumn.dart';
+import 'layout/LearnLayoutStack.dart';
+import 'layout/LearnLayoutCard.dart';
 
 void main() => runApp(LearnApp());
 
 class LearnApp extends StatelessWidget {
-  final List<String> arrItems = ["ListView", "GridView"];
+  final List<String> arrItems = ["ListView", "GridView", "水平布局 Row", "垂直布局 Column", "Stack 层叠布局", "卡片组件布局"];
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +50,36 @@ class LearnApp extends StatelessWidget {
         {
           Navigator.push(context,
               new MaterialPageRoute(builder: (context) => new ListViewPage()));
+        }
+        break;
+      case 1:
+        {
+          Navigator.push(context,
+              new MaterialPageRoute(builder: (context) => new GridViewPage()));
+        }
+        break;
+      case 2:
+        {
+          Navigator.push(context,
+              new MaterialPageRoute(builder: (context) => new RowPage()));
+        }
+        break;
+      case 3:
+        {
+          Navigator.push(context,
+              new MaterialPageRoute(builder: (context) => new ColumnPage()));
+        }
+        break;
+      case 4:
+        {
+          Navigator.push(context,
+              new MaterialPageRoute(builder: (context) => new StackPage()));
+        }
+        break;
+      case 5:
+        {
+          Navigator.push(context,
+              new MaterialPageRoute(builder: (context) => new CardPage()));
         }
         break;
     }
