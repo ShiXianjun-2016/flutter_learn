@@ -5,11 +5,14 @@ import 'layout/LearnLayoutRow.dart';
 import 'layout/LearnLayoutColumn.dart';
 import 'layout/LearnLayoutStack.dart';
 import 'layout/LearnLayoutCard.dart';
+import 'push/LearnPushPage.dart';
+import 'push/LearnProductPage.dart';
+import 'layout/LearnChatList.dart';
 
 void main() => runApp(LearnApp());
 
 class LearnApp extends StatelessWidget {
-  final List<String> arrItems = ["ListView", "GridView", "水平布局 Row", "垂直布局 Column", "Stack 层叠布局", "卡片组件布局"];
+  final List<String> arrItems = ["ListView", "GridView", "水平布局 Row", "垂直布局 Column", "Stack 层叠布局", "卡片组件布局", "跳转", "商品Demo", "聊天列表"];
 
   @override
   Widget build(BuildContext context) {
@@ -80,6 +83,24 @@ class LearnApp extends StatelessWidget {
         {
           Navigator.push(context,
               new MaterialPageRoute(builder: (context) => new CardPage()));
+        }
+        break;
+      case 6:
+        {
+          Navigator.push(context,
+              new MaterialPageRoute(builder: (context) => new PushCurrPage()));
+        }
+        break;
+      case 7:
+        {
+          Navigator.push(context,
+              new MaterialPageRoute(builder: (context) => new ProductListPage()));
+        }
+        break;
+      case 8:
+        {
+          Navigator.push(context,
+              new MaterialPageRoute(builder: (context) => new LearnChatListPage()));
         }
         break;
     }
